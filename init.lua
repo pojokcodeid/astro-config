@@ -5,12 +5,13 @@
 -- normal format is "key = value". These also handle array like data structures
 -- where a value with no key simply has an implicit numeric key
 -- require ("user.lsp")
-local status_ok, lsp_user = pcall(require, "user.lsp")
-if not status_ok then return end
+-- local status_ok, lsp_user = pcall(require, "user.lsp")
+-- if not status_ok then return end
 
 -- require ("user.alpha")
 -- require ("user.colorscheme.material-theme")
 -- require ("user.colorscheme.dracula-config")
+require "user.lsp"
 require "user.colorscheme.tokyonight-config"
 
 local config = {
@@ -159,13 +160,6 @@ local config = {
   -- Extend LSP configuration
   lsp = {
     skip_setup = { "clangd" },
-    ["server-settings"] = {
-      clangd = {
-        capabilities = {
-          offsetEncoding = "utf-8",
-        },
-      },
-    },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
@@ -218,6 +212,11 @@ local config = {
       --     },
       --   },
       -- },
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
+      },
     },
   },
 
@@ -254,9 +253,9 @@ local config = {
       ["<c-v>"] = { '"+p', desc = "" },
       ["J"] = { ":move '>+1<CR>gv-gv", desc = "" },
       ["K"] = { ":move '<-2<CR>gv-gv", desc = "" },
-      ["<A-j>"] = { ":move '>+1<CR>gv-gv", desc = "" },
+      -- ["<A-j>"] = { ":move '>+1<CR>gv-gv", desc = "" },
       ["<A-Down>"] = { ":move '>+1<CR>gv-gv", desc = "" },
-      ["<A-k>"] = { ":move '<-2<CR>gv-gv", desc = "" },
+      -- ["<A-k>"] = { ":move '<-2<CR>gv-gv", desc = "" },
       ["<A-Up>"] = { ":move '<-2<CR>gv-gv", desc = "" },
       ["<S-Down>"] = { ":'<,'>t'><cr>", desc = "" },
     },
