@@ -46,25 +46,6 @@
 
 local config = {
 
-  -- Configure AstroNvim updates
-  updater = {
-    remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "main", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
-    show_changelog = true, -- show the changelog after performing an update
-    auto_reload = false, -- automatically reload and sync packer after a successful update
-    auto_quit = false, -- automatically quit the current session after a successful update
-    -- remotes = { -- easily add new remotes to track
-    --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
-    --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
-    --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
-    -- },
-  },
-
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
   colorscheme = "tokyonight-storm",
@@ -165,13 +146,25 @@ local config = {
   -- end,
 
   -- Set dashboard header
+  -- header = {
+  --   [[                  __        __                      .___      ]],
+  --   [[______   ____    |__| ____ |  | __   ____  ____   __| _/____  ]],
+  --   [[\____ \ /  _ \   |  |/  _ \|  |/ / _/ ___\/  _ \ / __ |/ __ \ ]],
+  --   [[|  |_> >  <_> )  |  (  <_> )    <  \  \__(  <_> ) /_/ \  ___/ ]],
+  --   [[|   __/ \____/\__|  |\____/|__|_ \  \___  >____/\____ |\___  >]],
+  --   [[|__|         \______|           \/      \/           \/    \/ ]],
+  -- },
   header = {
-    [[                  __        __                      .___      ]],
-    [[______   ____    |__| ____ |  | __   ____  ____   __| _/____  ]],
-    [[\____ \ /  _ \   |  |/  _ \|  |/ / _/ ___\/  _ \ / __ |/ __ \ ]],
-    [[|  |_> >  <_> )  |  (  <_> )    <  \  \__(  <_> ) /_/ \  ___/ ]],
-    [[|   __/ \____/\__|  |\____/|__|_ \  \___  >____/\____ |\___  >]],
-    [[|__|         \______|           \/      \/           \/    \/ ]],
+    [[             _       _                    _      ]],
+    [[            (_)     | |                  | |     ]],
+    [[ _ __   ___  _  ___ | | __   ___ ___   __| | ___ ]],
+    [[| '_ \ / _ \| |/ _ \| |/ /  / __/ _ \ / _` |/ _ \]],
+    [[| |_) | (_) | | (_) |   <  | (_| (_) | (_| |  __/]],
+    [[| .__/ \___/| |\___/|_|\_\  \___\___/ \__,_|\___|]],
+    [[| |        _/ |                                  ]],
+    [[|_|       |__/                                   ]],
+
+
   },
 
   -- Default theme configuration
