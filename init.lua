@@ -203,7 +203,7 @@ local config = {
       rainbow = true,
       symbols_outline = false,
       telescope = true,
-      treesitter = false,
+      treesitter = true,
       vimwiki = false,
       ["which-key"] = true,
     },
