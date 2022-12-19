@@ -44,8 +44,6 @@
 --   vim.keymap.set("i", "<C-k>", function() vim.fn.VSCodeNotify("editor.action.insertLineBefore") end)
 -- end
 
-
-
 local config = {
 
   -- Set colorscheme to use
@@ -205,7 +203,7 @@ local config = {
       rainbow = true,
       symbols_outline = false,
       telescope = true,
-      treesitter = true,
+      treesitter = false,
       vimwiki = false,
       ["which-key"] = true,
     },
@@ -224,7 +222,7 @@ local config = {
     servers = {
       -- "pyright"
     },
-    
+
     formatting = {
       -- control auto formatting on save
       format_on_save = {
@@ -474,11 +472,11 @@ local config = {
     end,
     ["treesitter"] = function(cfg)
       -- ensure_installed = { "lua" },
-        cfg.highlight = {
-          enable = false,
-          additional_vim_regex_highlighting = false,
-        }
-        return cfg
+      cfg.highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      }
+      return cfg
     end,
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
