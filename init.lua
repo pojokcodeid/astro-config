@@ -166,14 +166,12 @@ local config = {
 
   -- Set dashboard header
   header = {
-    [[                                      GGG              ]],
-    [[                                     #GGG              ]],
-    [[    &BBGBB      &#G#&GB&        &BBB##GGG    &#BGBB#&  ]],
-    [[   BGGGB##  &#GP555& P555GB&   #GGG##GGGG   #GGB&&BGG# ]],
-    [[  &GGG&    G555GB&    &#G5Y5P  BGGB  #GGG   GGGB  #GGG ]],
-    [[  &GGG&    G555GB&    &#G555P  BGGB  #GGG   GGG#       ]],
-    [[   BGGGBBB  &#GP5Y5& P555G#&   #GGGB#GGGG   #GGB&&#BB# ]],
-    [[    &BBBB#      &#G#&GB&        &BBB##BBB    &#BBBB#&  ]],
+    [[                  __        __                      .___      ]],
+    [[______   ____    |__| ____ |  | __   ____  ____   __| _/____  ]],
+    [[\____ \ /  _ \   |  |/  _ \|  |/ / _/ ___\/  _ \ / __ |/ __ \ ]],
+    [[|  |_> >  <_> )  |  (  <_> )    <  \  \__(  <_> ) /_/ \  ___/ ]],
+    [[|   __/ \____/\__|  |\____/|__|_ \  \___  >____/\____ |\___  >]],
+    [[|__|         \______|           \/      \/           \/    \/ ]],
   },
 
   -- Default theme configuration
