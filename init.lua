@@ -44,6 +44,8 @@
 --   vim.keymap.set("i", "<C-k>", function() vim.fn.VSCodeNotify("editor.action.insertLineBefore") end)
 -- end
 
+
+
 local config = {
 
   -- Set colorscheme to use
@@ -163,8 +165,6 @@ local config = {
     [[| .__/ \___/| |\___/|_|\_\  \___\___/ \__,_|\___|]],
     [[| |        _/ |                                  ]],
     [[|_|       |__/                                   ]],
-
-
   },
 
   -- Default theme configuration
@@ -224,6 +224,7 @@ local config = {
     servers = {
       -- "pyright"
     },
+    
     formatting = {
       -- control auto formatting on save
       format_on_save = {
@@ -466,14 +467,19 @@ local config = {
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
       config.sources = {
         -- Set a formatter
-        --null_ls.builtins.formatting.stylua,
-        --null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.stylua,
+        -- null_ls.builtins.formatting.prettier,
       }
       return config -- return final config table
     end,
-    treesitter = { -- overrides `require("treesitter").setup(...)`
+    ["treesitter"] = function(cfg)
       -- ensure_installed = { "lua" },
-    },
+        cfg.highlight = {
+          enable = false,
+          additional_vim_regex_highlighting = false,
+        }
+        return cfg
+    end,
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       -- ensure_installed = { "sumneko_lua" },
@@ -498,7 +504,7 @@ local config = {
     vscode = {
       -- Add paths for including more VS Code style snippets in luasnip
       paths = {
-        vim.fn.stdpath "config" .. "/my-snippets",
+        vim.fn.stdpath "config" .. "/lua/user/my-snippets",
       },
     },
   },
