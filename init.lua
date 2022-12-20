@@ -199,9 +199,9 @@ local config = {
       hop = false,
       indent_blankline = true,
       lightspeed = false,
-      ["neo-tree"] = true,
+      ["neo-tree"] = false,
       notify = true,
-      ["nvim-tree"] = false,
+      ["nvim-tree"] = true,
       ["nvim-web-devicons"] = true,
       rainbow = true,
       symbols_outline = false,
@@ -458,6 +458,9 @@ local config = {
       },
       ["williamboman/nvim-lsp-installer"] = {},
       ["Mofiqul/dracula.nvim"] = {},
+      ["kyazdani42/nvim-tree.lua"] = {
+        config = function() require "user.nvim-tree" end,
+      },
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -536,6 +539,7 @@ local config = {
         ["<leader>"] = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
+          ["e"] = { "<cmd>NvimTreeToggle<cr>", "Exploler" },
           ["b"] = { name = "Buffer" },
           ["l"] = {
             name = "LSP",
