@@ -477,14 +477,6 @@ local config = {
       }
       return config -- return final config table
     end,
-    ["treesitter"] = function(cfg)
-      -- ensure_installed = { "lua" },
-      cfg.highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      }
-      return cfg
-    end,
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       -- ensure_installed = { "sumneko_lua" },
