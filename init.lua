@@ -44,6 +44,8 @@
 --   vim.keymap.set("i", "<C-k>", function() vim.fn.VSCodeNotify("editor.action.insertLineBefore") end)
 -- end
 
+require "user.lsp"
+
 local config = {
 
   -- Set colorscheme to use
@@ -217,7 +219,8 @@ local config = {
 
   -- Extend LSP configuration
   lsp = {
-    skip_setup = { "clangd", "jdtls" },
+    --skip_setup = { "clangd", "jdtls" },
+    skip_setup = { "clangd" },
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
@@ -276,55 +279,55 @@ local config = {
           offsetEncoding = "utf-8",
         },
       },
-      jdtls = function()
-        -- use this function notation to build some variables
-        local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
-        local root_dir = require("jdtls.setup").find_root(root_markers)
-
-        -- calculate workspace dir
-        local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-        local workspace_dir = vim.fn.stdpath "data" .. "/site/java/workspace-root/" .. project_name
-        os.execute("mkdir " .. workspace_dir)
-
-        -- get the mason install path
-        local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
-
-        -- get the current OS
-        local os
-        if vim.fn.has "macunix" then
-          os = "mac"
-        elseif vim.fn.has "win32" then
-          os = "win"
-        else
-          os = "linux"
-        end
-
-        -- return the server config
-        return {
-          cmd = {
-            "java",
-            "-Declipse.application=org.eclipse.jdt.ls.core.id1",
-            "-Dosgi.bundles.defaultStartLevel=4",
-            "-Declipse.product=org.eclipse.jdt.ls.core.product",
-            "-Dlog.protocol=true",
-            "-Dlog.level=ALL",
-            "-javaagent:" .. install_path .. "/lombok.jar",
-            "-Xms1g",
-            "--add-modules=ALL-SYSTEM",
-            "--add-opens",
-            "java.base/java.util=ALL-UNNAMED",
-            "--add-opens",
-            "java.base/java.lang=ALL-UNNAMED",
-            "-jar",
-            vim.fn.glob(install_path .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
-            "-configuration",
-            install_path .. "/config_" .. os,
-            "-data",
-            workspace_dir,
-          },
-          root_dir = root_dir,
-        }
-      end,
+      -- jdtls = function()
+      --   -- use this function notation to build some variables
+      --   local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+      --   local root_dir = require("jdtls.setup").find_root(root_markers)
+      --
+      --   -- calculate workspace dir
+      --   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+      --   local workspace_dir = vim.fn.stdpath "data" .. "/site/java/workspace-root/" .. project_name
+      --   os.execute("mkdir " .. workspace_dir)
+      --
+      --   -- get the mason install path
+      --   local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
+      --
+      --   -- get the current OS
+      --   local os
+      --   if vim.fn.has "macunix" then
+      --     os = "mac"
+      --   elseif vim.fn.has "win32" then
+      --     os = "win"
+      --   else
+      --     os = "linux"
+      --   end
+      --
+      --   -- return the server config
+      --   return {
+      --     cmd = {
+      --       "java",
+      --       "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+      --       "-Dosgi.bundles.defaultStartLevel=4",
+      --       "-Declipse.product=org.eclipse.jdt.ls.core.product",
+      --       "-Dlog.protocol=true",
+      --       "-Dlog.level=ALL",
+      --       "-javaagent:" .. install_path .. "/lombok.jar",
+      --       "-Xms1g",
+      --       "--add-modules=ALL-SYSTEM",
+      --       "--add-opens",
+      --       "java.base/java.util=ALL-UNNAMED",
+      --       "--add-opens",
+      --       "java.base/java.lang=ALL-UNNAMED",
+      --       "-jar",
+      --       vim.fn.glob(install_path .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
+      --       "-configuration",
+      --       install_path .. "/config_" .. os,
+      --       "-data",
+      --       workspace_dir,
+      --     },
+      --     root_dir = root_dir,
+      --   }
+      -- end,
     },
   },
 
@@ -422,7 +425,7 @@ local config = {
       --   end,
       -- },
       --add by akn
-      ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
+      -- ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
       {
         "p00f/clangd_extensions.nvim",
         after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
