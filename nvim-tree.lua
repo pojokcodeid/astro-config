@@ -12,6 +12,7 @@ nvim_tree.setup {
     update_cwd = true,
   },
   renderer = {
+    root_folder_label = ":~:s?$?/..?",
     root_folder_modifier = ":t",
     icons = {
       glyphs = {

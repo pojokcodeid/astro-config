@@ -46,6 +46,8 @@
 local ls_conf = pcall(require, "user.lsp")
 if not ls_conf then return end
 -- require "user.lsp"
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+if not null_ls_status_ok then return end
 
 local config = {
 
@@ -536,7 +538,7 @@ local config = {
           ["l"] = {
             name = "LSP",
             f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-            I = { "<cmd>Mason<cr>", "Mason Install" },
+            M = { ":Mason<cr>", "Mason Install" },
           },
           ["r"] = {
             name = "Run",
