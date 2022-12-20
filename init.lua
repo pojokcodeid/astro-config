@@ -43,8 +43,9 @@
 --   -- Insert mode
 --   vim.keymap.set("i", "<C-k>", function() vim.fn.VSCodeNotify("editor.action.insertLineBefore") end)
 -- end
-
-require "user.lsp"
+local ls_conf = pcall(require, "user.lsp")
+if not ls_conf then return end
+-- require "user.lsp"
 
 local config = {
 
