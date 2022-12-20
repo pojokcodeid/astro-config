@@ -46,8 +46,6 @@
 local ls_conf = pcall(require, "user.lsp")
 if not ls_conf then return end
 -- require "user.lsp"
-local null_ls_status_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_status_ok then return end
 
 local config = {
 
