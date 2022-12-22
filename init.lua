@@ -89,14 +89,7 @@ local config = {
       neovide_cursor_vfx_mode = "ripple",
       neovide_scale_factor = 1.0,
       -- end config neovide
-      mapleader = " ", -- sets vim.g.mapleader
-      autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-      cmp_enabled = true, -- enable completion at start
-      autopairs_enabled = true, -- enable autopairs at start
-      diagnostics_enabled = true, -- enable diagnostics at start
-      status_diagnostics_enabled = true, -- enable diagnostics in statusline
-      icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-      ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+      cmp_enabled = true,
       backspace = vim.opt.backspace + { "nostop" }, -- Don't stop backspace at insert
       clipboard = "unnamedplus", -- Connection to the system clipboard
       cmdheight = 0, -- hide command line unless needed
@@ -461,9 +454,8 @@ local config = {
       ["kyazdani42/nvim-tree.lua"] = {
         config = function() require "user.nvim-tree" end,
       },
-      -- Completion engine
-      ["hrsh7th/nvim-cmp"] = { event = "InsertEnter", config = function() require "user.cmp" end },
     },
+    ["cmp"] = function() require "user.cmp" end,
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup function call
