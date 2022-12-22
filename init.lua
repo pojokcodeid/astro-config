@@ -51,7 +51,8 @@ local config = {
 
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
-  colorscheme = "tokyonight-storm",
+  -- colorscheme = "tokyonight",
+  colorscheme = "tokyonight-night",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
 
