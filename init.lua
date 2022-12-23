@@ -53,6 +53,7 @@ local config = {
   -- colorscheme = "default_theme",
   -- colorscheme = "tokyonight",
   colorscheme = "tokyonight-night",
+  -- colorscheme = "darkplus",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
 
@@ -435,23 +436,26 @@ local config = {
       ["CRAG666/code_runner.nvim"] = {
         config = function() require "user.coderunner" end,
       },
+      -- ini untuk color scheme
       ["folke/tokyonight.nvim"] = {
         config = function() require "user.colorscheme.tokyonight-config" end,
       },
+      ["glepnir/oceanic-material"] = {},
+      ["marko-cerovac/material.nvim"] = {
+        config = function() require "user.colorscheme.material-theme" end,
+      },
+      ["Mofiqul/dracula.nvim"] = {},
+      -- ["lunarvim/darkplus.nvim"] = {},
+      -- ["lunarvim/Onedarker.nvim"] = {},
       -- ["ziontee113/color-picker.nvim"] = {
       --   config = function()
       --     require("color-picker")
       --   end
       -- },
-      ["glepnir/oceanic-material"] = {},
-      ["marko-cerovac/material.nvim"] = {
-        config = function() require "user.colorscheme.material-theme" end,
-      },
       ["iamcco/markdown-preview.nvim"] = {
         config = function() require "user.markdown-config" end,
       },
       ["williamboman/nvim-lsp-installer"] = {},
-      ["Mofiqul/dracula.nvim"] = {},
       ["kyazdani42/nvim-tree.lua"] = {
         config = function() require "user.nvim-tree" end,
       },
