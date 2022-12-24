@@ -52,7 +52,8 @@ local config = {
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
   -- colorscheme = "tokyonight",
-  colorscheme = "tokyonight-night",
+  -- colorscheme = "tokyonight-night",
+  colorscheme = "lunar",
   -- colorscheme = "darkplus",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
@@ -442,6 +443,7 @@ local config = {
       },
       ["glepnir/oceanic-material"] = {},
       ["Mofiqul/dracula.nvim"] = {},
+      ["LunarVim/lunar.nvim"] = {},
       -- ["lunarvim/darkplus.nvim"] = {},
       -- ["lunarvim/Onedarker.nvim"] = {},
       -- ["ziontee113/color-picker.nvim"] = {
