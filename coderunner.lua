@@ -8,6 +8,6 @@ require("code_runner").setup {
     rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
     -- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
     cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
-    scss = "sass $dir/$fileName $dir/compile/$fileNameWithoutExt.css",
+    scss = "sass $dir/$fileName $dir/$fileNameWithoutExt.css",
   },
 }
