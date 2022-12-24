@@ -1,4 +1,4 @@
-require('code_runner').setup({
+require("code_runner").setup {
   -- put here the commands by filetype
   filetype = {
     java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -8,5 +8,6 @@ require('code_runner').setup({
     rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
     -- cpp="gcc $fileName -lstdc++ -o $fileNameWithoutExt && $fileNameWithoutExt"
     cpp = "g++ $fileName -o $fileNameWithoutExt && $dir/$fileNameWithoutExt",
+    scss = "sass $dir/$fileName $dir/compile/$fileNameWithoutExt.css",
   },
-})
+}
