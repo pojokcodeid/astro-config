@@ -129,6 +129,7 @@ local config = {
       -- minimal number of screen columns either side of cursor if wrap is `false`
       -- guifont = "monospace:h17", -- the font used in graphical neovim applications
       guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
+      -- guifont = "SauceCodePro_Nerd_Font:h17", -- the font used in graphical neovim applications
       whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
     },
   },
@@ -534,6 +535,7 @@ local config = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
           ["e"] = { "<cmd>NvimTreeToggle<cr>", "Exploler" },
+          ["n"] = { "<cmd>Neotree<cr>", "Neotree Exploler" },
           ["b"] = { name = "Buffer" },
           ["l"] = {
             name = "LSP",
