@@ -1,0 +1,17 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+out/**/*.map
+src/**
+.gitignore
+tsconfig.json
+tslint.json
+data/fontawesome-4/svg/*.svg
+demo-files/**
+media/**
+!media/image/icon.png
+migrations/**
+DEVELOPMENT.md
+data/fontawesome-6/metadata/all.js
+data/fontawesome-6/metadata/convert.icons.raw.json.mjs
+data/fontawesome-6/metadata/data.json
