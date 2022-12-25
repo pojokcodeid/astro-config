@@ -1,2 +1,0 @@
-start /wait ffmpeg -y -ss 00:00:02 -to 00:00:09 -i .\output.mkv -vf fps=30,scale=1200:-1:flags=lanczos,palettegen palette.png
-start /wait ffmpeg -y -ss 00:00:02 -to 00:00:09 -i .\output.mkv -i palette.png -filter_complex "fps=30,scale=1200:-1:flags=lanczos[x];[x][1:v]paletteuse" demo-autocomplete.gif

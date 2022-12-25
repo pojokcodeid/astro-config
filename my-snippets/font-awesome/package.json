@@ -1,166 +1,80 @@
 {
-    "name": "fontawesome-autocomplete",
-    "displayName": "Font Awesome Auto-complete & Preview",
-    "version": "1.3.1",
-    "publisher": "Janne252",
-    "description": "Autocomplete & preview Font Awesome icons in any language.",
-    "author": {
-        "name": "Janne Varjo"
-    },
-    "categories": [
-        "Other"
-    ],
-    "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "Font Awesome autocomplete configuration",
-            "properties": {
-                "fontAwesomeAutocomplete.version": {
-                    "type": "string",
-                    "enum": [
-                        "4",
-                        "5",
-                        "6"
-                    ],
-                    "default": "5",
-                    "description": "Font Awesome major version to use (either 4, 5, or 6)."
-                },
-                "fontAwesomeAutocomplete.patterns": {
-                    "type": "array",
-                    "default": [
-                        "**/*.html"
-                    ],
-                    "description": "List of glob patters that determine which files will have Font Awesome Autocomplete enabled."
-                },
-                "fontAwesomeAutocomplete.triggerWord": {
-                    "type": "string",
-                    "default": "fa-",
-                    "minLength": 1,
-                    "description": "A word that triggers the auto completion of Font Awesome icons. Last character of the trigger word is also the trigger character for auto completion menu."
-                },
-                "fontAwesomeAutocomplete.disableTriggerWordAutoClearPatterns": {
-                    "type": "array",
-                    "default": [
-                        "**/*.html"
-                    ],
-                    "description": "A list of glob patterns for which the extension should NOT auto-remove the trigger word when a font class name is inserted from the auto completion list."
-                },
-                "fontAwesomeAutocomplete.preview.backgroundColor": {
-                    "type": "string",
-                    "default": "#ffffff",
-                    "minLength": 3,
-                    "description": "Background color of a Font Awesome icon preview. Supports any valid CSS color."
-                },
-                "fontAwesomeAutocomplete.preview.foregroundColor": {
-                    "type": "string",
-                    "default": "#000000",
-                    "minLength": 3,
-                    "description": "Foreground color of a Font Awesome icon preview. Supports any valid CSS color."
-                },
-                "fontAwesomeAutocomplete.insertionTemplate": {
-                    "type": "object",
-                    "default": {
-                        "**/*.html": "{style} {prefix}{name}"
-                    },
-                    "description": "Allows overriding the inserted text per file type when an autocompletion item is selected. Available template placeholders are {style}, {styleName}, {name}, and {prefix}. {name} supports the following formatters: camelCase, kebabCase, pascalCase, and snakeCase. Usage: {name:formatter}, e.g. {name:camelCase}",
-                    "examples": [
-                        {
-                            "**/*.html": "{style} {prefix}{name}"
-                        },
-                        {
-                            "**/*.vue": "<font-awesome-icon :icon=\"['{style}', '{name}']\" />"
-                        },
-                        {
-                            "**/*.vue": "import {fa{name:pascalCase}} from '@fortawesome/free-{styleName}-svg-icons';"
-                        }
-                    ]
-                },
-                "fontAwesomeAutocomplete.triggerCharacters": {
-                    "type": "array",
-                    "default": [
-                        "f"
-                    ],
-                    "description": "List of characters that trigger Font Awesome Autocomplete.",
-                    "deprecationMessage": "This setting is deprecated and replaced by triggerWord in version 0.0.4. This setting can be safely removed."
-                },
-                "fontAwesomeAutocomplete.enableElevatedSortPriority": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Artificially increases the importance of completion items. Enabled by default as FontAwesome Autocomplete extension only provides suggestions based on the triggerWord setting."
-                }
-            }
-        }
-    },
-    "icon": "media/image/icon.png",
-    "galleryBanner": {
-        "color": "#1e1c1e",
-        "theme": "dark"
-    },
-    "license": "SEE LICENSE IN LICENSE.txt",
-    "bugs": {
-        "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Janne252/vscode-fontawesome-auto-complete.git"
-    },
-    "homepage": "https://github.com/Janne252/vscode-fontawesome-auto-complete/blob/master/README.md",
-    "engines": {
-        "vscode": "^1.32.0"
-    },
-    "keywords": [
-        "Font Awesome 6",
-        "Font Awesome 5",
-        "Font Awesome 4",
-        "Class names",
-        "Auto-complete",
-        "Icon preview"
-    ],
-    "badges": [
-        {
-            "url": "https://img.shields.io/badge/Font%20Awesome%206%20(free)-6.0.0-%23ffd43b",
-            "href": "https://fontawesome.com/v6.0/",
-            "description": "Font Awesome 6 (free) 6.0.0"
-        },
-        {
-            "url": "https://img.shields.io/badge/Font%20Awesome%205%20(free)-5.15.4-%23339af0",
-            "href": "https://fontawesome.com",
-            "description": "Font Awesome 5 (free) 5.15.4"
-        },
-        {
-            "url": "https://img.shields.io/badge/Font%20Awesome%204-4.7.0-%231d9d74",
-            "href": "https://fontawesome.com/v4.7.0/",
-            "description": "Font Awesome 4.7.0"
-        }
-    ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/extension",
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "test": "ts-mocha -p ./tsconfig.json ./src/**/*.spec.ts --exit",
-        "extension-test": "npm run compile && node ./out/test/runTest.js"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.2.0",
-        "@types/glob-to-regexp": "^0.4.1",
-        "@types/mocha": "^9.0.0",
-        "@types/node": "^13.13.5",
-        "@types/vscode": "^1.32.0",
-        "@types/yaml": "^1.9.7",
-        "deep-equal": "^2.0.5",
-        "glob": "^7.2.0",
-        "mocha": "^9.1.4",
-        "ts-mocha": "^9.0.2",
-        "tslint": "^6.1.3",
-        "typescript": "^4.5.4",
-        "vscode-test": "^1.6.1"
-    },
-    "dependencies": {
-        "glob-to-regexp": "^0.4.1",
-        "yaml": "^1.9.2"
-    }
+  "name": "font-awesome-5-codes-html",
+  "displayName": "Font awesome 5 HTML snippets",
+  "description": "Font awesome 5 HTML snippets",
+  "icon": "fontawesome_128px.png",
+  "version": "1.0.1",
+  "publisher": "mrdemonwolf",
+  "license": "See License section in README.md",
+  "homepage": "https://github.com/MrDemonWolf/font-awesome-5-codes-html/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrDemonWolf/font-awesome-5-codes-html.git"
+  },
+  "engines": {
+    "vscode": "^0.10.1"
+  },
+  "galleryBanner": {
+    "color": "#E6E0EA",
+    "theme": "light"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "blade",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "ejs",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "handlebars",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "latte",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "plaintext",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "razor",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "tpl",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "twig",
+        "path": "./snippets.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets.json"
+      }
+    ]
+  }
 }
