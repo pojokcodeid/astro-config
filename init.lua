@@ -52,9 +52,7 @@ local config = {
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
   -- colorscheme = "tokyonight",
-  -- colorscheme = "tokyonight-night",
-  colorscheme = "onedark",
-  -- colorscheme = "darkplus",
+  colorscheme = "tokyonight-night",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
 
@@ -452,9 +450,6 @@ local config = {
       },
       ["glepnir/oceanic-material"] = {},
       ["Mofiqul/dracula.nvim"] = {},
-      ["navarasu/onedark.nvim"] = {
-        config = function() require "user.colorscheme.onedark" end,
-      },
       -- ["ziontee113/color-picker.nvim"] = {
       --   config = function()
       --     require("color-picker")
