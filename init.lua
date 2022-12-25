@@ -52,8 +52,8 @@ local config = {
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
   -- colorscheme = "tokyonight",
-  colorscheme = "tokyonight-night",
-  -- colorscheme = "lunar",
+  -- colorscheme = "tokyonight-night",
+  colorscheme = "onedark",
   -- colorscheme = "darkplus",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
@@ -172,7 +172,6 @@ local config = {
     [[| ||_/ \____| |\___/|_| \_)   \____\___/ \____|\____)]],
     [[|_|       (__/                                       ]],
   },
-  
 
   -- Default theme configuration
   default_theme = {
@@ -453,9 +452,9 @@ local config = {
       },
       ["glepnir/oceanic-material"] = {},
       ["Mofiqul/dracula.nvim"] = {},
-      -- ["LunarVim/lunar.nvim"] = {},
-      -- ["lunarvim/darkplus.nvim"] = {},
-      -- ["lunarvim/Onedarker.nvim"] = {},
+      ["navarasu/onedark.nvim"] = {
+        config = function() require "user.colorscheme.onedark" end,
+      },
       -- ["ziontee113/color-picker.nvim"] = {
       --   config = function()
       --     require("color-picker")
