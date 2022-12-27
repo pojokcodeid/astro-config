@@ -53,6 +53,7 @@ local config = {
   -- colorscheme = "default_theme",
   -- colorscheme = "tokyonight",
   colorscheme = "tokyonight-night",
+  -- colorscheme = "nord",
   -- colorscheme = "dracula",
   -- colorscheme = "material",
 
@@ -128,8 +129,8 @@ local config = {
       writebackup = false, -- Disable making a backup before overwriting a file
       -- minimal number of screen columns either side of cursor if wrap is `false`
       -- guifont = "monospace:h17", -- the font used in graphical neovim applications
-      guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
-      -- guifont = "SauceCodePro_Nerd_Font:h17", -- the font used in graphical neovim applications
+      -- guifont = "Source_Code_Pro:h17", -- the font used in graphical neovim applications
+      guifont = "FiraCode_Nerd_Font:h16", -- the font used in graphical neovim applications
       whichwrap = "bs<>[]hl", -- which "horizontal" keys are allowed to travel to prev/next line
     },
   },
@@ -171,7 +172,6 @@ local config = {
     [[| ||_/ \____| |\___/|_| \_)   \____\___/ \____|\____)]],
     [[|_|       (__/                                       ]],
   },
-
   -- Default theme configuration
   default_theme = {
     -- Modify the color palette for the default theme
@@ -451,6 +451,7 @@ local config = {
       },
       ["glepnir/oceanic-material"] = {},
       ["Mofiqul/dracula.nvim"] = {},
+      ["arcticicestudio/nord-vim"] = {},
       -- ["ziontee113/color-picker.nvim"] = {
       --   config = function()
       --     require("color-picker")
