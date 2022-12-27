@@ -536,7 +536,7 @@ local config = {
           -- third key is the key to bring up next level and its displayed
           -- group name in which-key top level menu
           ["e"] = { "<cmd>NvimTreeToggle<cr>", "Exploler" },
-          ["n"] = { "<cmd>Neotree<cr>", "Neotree Exploler" },
+          ["n"] = { "<cmd>Neotree toggle<cr>", "Neotree Exploler" },
           ["b"] = { name = "Buffer" },
           ["l"] = {
             name = "LSP",
