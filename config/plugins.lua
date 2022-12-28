@@ -35,7 +35,7 @@ local m = {
     ["manzeloth/live-server"] = {},
     ["mg979/vim-visual-multi"] = {},
     ["CRAG666/code_runner.nvim"] = {
-      config = function() require "user.coderunner" end,
+      config = function() require "user.config.coderunner" end,
     },
     -- ini untuk color scheme
     ["folke/tokyonight.nvim"] = {
@@ -50,14 +50,14 @@ local m = {
     --   end
     -- },
     ["iamcco/markdown-preview.nvim"] = {
-      config = function() require "user.markdown-config" end,
+      config = function() require "user.config.markdown-config" end,
     },
     ["williamboman/nvim-lsp-installer"] = {},
     ["kyazdani42/nvim-tree.lua"] = {
-      config = function() require "user.nvim-tree" end,
+      config = function() require "user.config.nvim-tree" end,
     },
   },
-  ["cmp"] = function() require "user.cmp" end,
+  ["cmp"] = function() require "user.config.cmp" end,
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
     -- config variable is the default configuration table for the setup function call
