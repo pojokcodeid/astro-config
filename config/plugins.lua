@@ -53,11 +53,15 @@ local m = {
       config = function() require "user.config.markdown-config" end,
     },
     ["williamboman/nvim-lsp-installer"] = {},
+    ["nvim-tree/nvim-web-devicons"] = {
+      config = function() require "user.config.webdevicons" end,
+    },
     ["kyazdani42/nvim-tree.lua"] = {
       config = function() require "user.config.nvim-tree" end,
     },
   },
   ["cmp"] = function() require "user.config.cmp" end,
+  -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,
   -- All other entries override the require("<key>").setup({...}) call for default plugins
   ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
     -- config variable is the default configuration table for the setup function call
