@@ -15,7 +15,7 @@
 --local status_ok, colorscheme_local = pcall(require, "user.colorscheme.tokyonight-config")
 --if not status_ok then return end
 --require "user.colorscheme.tokyonight-config"
-if vim.g.vscode then require "user.vscode_config" end
+if vim.g.vscode then require "user.config.vscode_config" end
 local ls_conf = pcall(require, "user.lsp")
 if not ls_conf then return end
 -- require "user.lsp"
@@ -42,8 +42,8 @@ local config = {
 
   -- set vim options here (vim.<first_key>.<second_key> = value)
   options = {
-    opt = require "user.opt_config",
-    g = require "user.default_config",
+    opt = require "user.config.opt_config",
+    g = require "user.config.default_config",
   },
   -- If you need more control, you can use the function()...end notation
   -- options = function(local_vim)
@@ -84,7 +84,7 @@ local config = {
     [[|_|       (__/                                       ]],
   },
   -- Default theme configuration
-  default_theme = require "user.default_theme",
+  default_theme = require "user.config.default_theme",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -93,16 +93,16 @@ local config = {
   },
 
   -- Extend LSP configuration
-  lsp = require "user.lsp_config",
+  lsp = require "user.config.lsp_config",
 
   -- Mapping data with "desc" stored directly by vim.keymap.set().
   --
   -- Please use this mappings table to set keyboard mapping since this is the
   -- lower level configuration and more robust one. (which-key will
   -- automatically pick-up stored data by this setting.)
-  mappings = require "user.maapings",
+  mappings = require "user.config.maapings",
   -- Configure plugins
-  plugins = require "user.plugins",
+  plugins = require "user.config.plugins",
   -- LuaSnip Options
   luasnip = {
     -- Extend filetypes
@@ -134,7 +134,7 @@ local config = {
   },
 
   -- Modify which-key registration (Use this with mappings table in the above.)
-  ["which-key"] = require "user.whichkey",
+  ["which-key"] = require "user.config.whichkey",
 
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
