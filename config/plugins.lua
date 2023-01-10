@@ -59,6 +59,11 @@ local m = {
     ["kyazdani42/nvim-tree.lua"] = {
       config = function() require "user.config.nvim-tree" end,
     },
+    ["goolord/alpha-nvim"]={
+      config=function()
+        require "user.config.alpha"
+      end,
+    },
   },
   ["cmp"] = function() require "user.config.cmp" end,
   -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,

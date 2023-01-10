@@ -1,10 +1,13 @@
 ## untuk mac & linux
+
 ```
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim +PackerSync
 git clone https://github.com/pojokcodeid/astro-config ~/.config/nvim/lua/user
 ```
-## untuk windows 
+
+## untuk windows
+
 ```
 git clone https://github.com/AstroNvim/AstroNvim "$env:LOCALAPPDATA\nvim"
 nvim +PackerSync
