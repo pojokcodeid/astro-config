@@ -22,7 +22,7 @@ local m = {
     --   end,
     -- },
     --add by akn
-    -- ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
+    ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
     {
       "p00f/clangd_extensions.nvim",
       after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
@@ -59,10 +59,8 @@ local m = {
     ["kyazdani42/nvim-tree.lua"] = {
       config = function() require "user.config.nvim-tree" end,
     },
-    ["goolord/alpha-nvim"]={
-      config=function()
-        require "user.config.alpha"
-      end,
+    ["goolord/alpha-nvim"] = {
+      config = function() require "user.config.alpha" end,
     },
   },
   ["cmp"] = function() require "user.config.cmp" end,
