@@ -62,6 +62,40 @@ local m = {
     ["goolord/alpha-nvim"] = {
       config = function() require "user.config.alpha_config" end,
     },
+    -- untuk pewarnaan TODO:
+    ["folke/todo-comments.nvim"] = {
+      event = "BufRead",
+      config = function() require("todo-comments").setup() end,
+    },
+    -- untuk scroll view
+    ["karb94/neoscroll.nvim"] = {
+      config = function() require("neoscroll").setup() end,
+    },
+    ["dstein64/nvim-scrollview"] = {
+      event = { "BufRead", "BufNewFile" },
+      config = function() require "user.config.nvimscroll" end,
+    },
+    -- untuk auto comp commond mode
+    ["gelguy/wilder.nvim"] = {
+      config = function()
+        local wilder = require "wilder"
+        wilder.setup { modes = { ":", "/", "?" } }
+        wilder.set_option(
+          "renderer",
+          wilder.popupmenu_renderer {
+            highlighter = wilder.basic_highlighter(),
+            left = { " ", wilder.popupmenu_devicons() },
+            right = { " ", wilder.popupmenu_scrollbar() },
+          }
+        )
+      end,
+    },
+    -- untuk auto save
+    ["907th/vim-auto-save"] = { event = "InsertEnter" },
+    -- Manage your yank history
+    ["gbprod/yanky.nvim"] = {
+      config = function() require "user.config.yanky" end,
+    },
   },
   ["cmp"] = function() require "user.config.cmp" end,
   -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,
