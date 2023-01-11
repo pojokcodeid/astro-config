@@ -60,7 +60,7 @@ local m = {
       config = function() require "user.config.nvim-tree" end,
     },
     ["goolord/alpha-nvim"] = {
-      config = function() require "user.config.alpha" end,
+      config = function() require "user.config.alpha_config" end,
     },
   },
   ["cmp"] = function() require "user.config.cmp" end,
