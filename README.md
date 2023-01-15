@@ -4,7 +4,7 @@
 
 ## Kebutuhan dasar
 
-1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.1
+1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.2
 2. C++ (windows) Compiler https://www.msys2.org/
 3. GIT https://git-scm.com/download/win
 4. NodeJs https://nodejs.org/en/
@@ -30,7 +30,7 @@ visudo
 sudo apt-get install wget
 mkdir download
 cd download
-wget https://github.com/neovim/neovim/releases/download/v0.8.1/nvim-linux64.deb
+wget https://github.com/neovim/neovim/releases/download/v0.8.2/nvim-linux64.deb
 sudo apt-get install ./nvim-linux64.deb
 nvim --version
 ```
@@ -55,9 +55,12 @@ sudo apt-get install curl
 sudo apt install build-essential libssl-dev
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source ~/.bashrc
-nvm install 18.12.1
+nvm install 18.13.0
 node --version
 npm --version
+
+nvm deactivate
+nvm uninstall v18.13.0
 ```
 
 - Install unzip, ripgrep
