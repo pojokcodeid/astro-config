@@ -113,6 +113,22 @@ local m = {
       config = function() require "user.config.yanky" end,
     },
     ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
+    ["echasnovski/mini.indentscope"] = {
+      version = false,
+      event = "BufReadPre",
+      opts = {
+        -- symbol = "▏",
+        symbol = "│",
+        options = { try_as_border = true },
+      },
+      config = function(_, opts)
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+          callback = function() vim.b.miniindentscope_disable = true end,
+        })
+        require("mini.indentscope").setup(opts)
+      end,
+    },
   },
   ["cmp"] = function() require "user.config.cmp" end,
   -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,
