@@ -114,6 +114,7 @@ wsl --shutdown
 6. Check ketersediaan GCC
 
 ```
+sudo apt-get install gcc
 gcc --version
 ```
 
