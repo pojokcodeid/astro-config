@@ -112,6 +112,7 @@ local m = {
     ["gbprod/yanky.nvim"] = {
       config = function() require "user.config.yanky" end,
     },
+    ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
   },
   ["cmp"] = function() require "user.config.cmp" end,
   -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,
