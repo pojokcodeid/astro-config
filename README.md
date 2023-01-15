@@ -87,6 +87,67 @@ nvim +PackerSync
 git clone https://github.com/pojokcodeid/astro-config ~/.config/nvim/lua/user
 ```
 
+#CARA LAIN INSTALL DI LINUX
+
+1. install snap
+   https://snapcraft.io/docs/installing-snap-on-kali
+2. Config Snap
+
+```
+sudo vi /etc/wsl.conf
+
+[boot]
+systemd=true
+```
+
+3. Restart WSL
+
+```
+windows + r
+wsl --shutdown
+```
+
+4. Install NodeJS
+   https://snapcraft.io/node
+5. Insatall NeoVim
+   https://snapcraft.io/nvim
+6. Check ketersediaan GCC
+
+```
+gcc --version
+```
+
+7. Install git
+
+```
+sudo apt-get install git
+git --version
+```
+
+8. Install unzip, ripgrep
+
+```
+sudo apt-get install unzip
+sudo apt-get install ripgrep
+```
+
+9. Install Lazygit
+
+```
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+lazygit --version
+```
+
+10. Copy Config
+
+```
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+nvim +PackerSync
+git clone https://github.com/pojokcodeid/astro-config ~/.config/nvim/lua/user
+```
+
 - Untuk Java Copy Confignya
 
 ```
