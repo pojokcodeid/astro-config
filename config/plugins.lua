@@ -39,11 +39,9 @@ local m = {
     },
     -- ini untuk color scheme
     ["folke/tokyonight.nvim"] = {
+      commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
       config = function() require "user.colorscheme.tokyonight-config" end,
     },
-    ["glepnir/oceanic-material"] = {},
-    ["Mofiqul/dracula.nvim"] = {},
-    ["arcticicestudio/nord-vim"] = {},
     -- ["ziontee113/color-picker.nvim"] = {
     --   config = function()
     --     require("color-picker")
@@ -80,13 +78,31 @@ local m = {
       config = function()
         local wilder = require "wilder"
         wilder.setup { modes = { ":", "/", "?" } }
+        -- wilder.set_option(
+        --   "renderer",
+        --   wilder.popupmenu_renderer {
+        --     highlighter = wilder.basic_highlighter(),
+        --     left = { " ", wilder.popupmenu_devicons() },
+        --     right = { " ", wilder.popupmenu_scrollbar() },
+        --   }
+        -- )
+
+        -- *ini untuk popup dialog
         wilder.set_option(
           "renderer",
-          wilder.popupmenu_renderer {
-            highlighter = wilder.basic_highlighter(),
+          wilder.popupmenu_renderer(wilder.popupmenu_palette_theme {
+            -- 'single', 'double', 'rounded' or 'solid'
+            -- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
+            border = "rounded",
+            max_height = "40%", -- max height of the palette
+            max_width = "40%",
+            min_height = 0, -- set to the same as 'max_height' for a fixed height window
+            prompt_position = "top", -- 'top' or 'bottom' to set the location of the prompt
+            reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
             left = { " ", wilder.popupmenu_devicons() },
             right = { " ", wilder.popupmenu_scrollbar() },
-          }
+            pumblend = 20,
+          })
         )
       end,
     },
