@@ -115,6 +115,7 @@ wsl --shutdown
 
 ```
 sudo apt-get install gcc
+sudo apt-get install g++
 gcc --version
 ```
 
