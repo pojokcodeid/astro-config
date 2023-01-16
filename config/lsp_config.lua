@@ -1,6 +1,6 @@
 local m = {
   --skip_setup = { "clangd", "jdtls" },
-  skip_setup = { "clangd", "jdtls" },
+  skip_setup = { "jdtls" },
   -- enable servers that you already have installed without mason
   servers = {
     -- "pyright"
@@ -54,11 +54,6 @@ local m = {
     --     },
     --   },
     -- },
-    clangd = {
-      capabilities = {
-        offsetEncoding = "utf-8",
-      },
-    },
     jdtls = function()
       local status, jdtls = pcall(require, "jdtls")
       if not status then return end
