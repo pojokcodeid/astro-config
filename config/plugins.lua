@@ -22,48 +22,26 @@ local m = {
     --   end,
     -- },
     --add by akn
-    ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
-    {
-      "p00f/clangd_extensions.nvim",
-      after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
-      config = function()
-        require("clangd_extensions").setup {
-          server = astronvim.lsp.server_settings "clangd",
-        }
-      end,
-    },
-    ["manzeloth/live-server"] = {},
-    ["mg979/vim-visual-multi"] = {},
-    ["CRAG666/code_runner.nvim"] = {
-      config = function() require "user.config.coderunner" end,
+    ["goolord/alpha-nvim"] = {
+      config = function() require "user.config.alpha_config" end,
     },
     -- ini untuk color scheme
     ["folke/tokyonight.nvim"] = {
       commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764",
       config = function() require "user.colorscheme.tokyonight-config" end,
     },
-    -- ["ziontee113/color-picker.nvim"] = {
-    --   config = function()
-    --     require("color-picker")
-    --   end
-    -- },
-    ["iamcco/markdown-preview.nvim"] = {
-      config = function() require "user.config.markdown-config" end,
-    },
-    ["williamboman/nvim-lsp-installer"] = {},
-    ["nvim-tree/nvim-web-devicons"] = {
-      config = function() require "user.config.webdevicons" end,
-    },
     ["kyazdani42/nvim-tree.lua"] = {
       config = function() require "user.config.nvim-tree" end,
-    },
-    ["goolord/alpha-nvim"] = {
-      config = function() require "user.config.alpha_config" end,
     },
     -- untuk pewarnaan TODO:
     ["folke/todo-comments.nvim"] = {
       event = "BufRead",
       config = function() require("todo-comments").setup() end,
+    },
+    ["manzeloth/live-server"] = {},
+    ["mg979/vim-visual-multi"] = {},
+    ["CRAG666/code_runner.nvim"] = {
+      config = function() require "user.config.coderunner" end,
     },
     -- untuk scroll view
     ["karb94/neoscroll.nvim"] = {
@@ -73,6 +51,14 @@ local m = {
       event = { "BufRead", "BufNewFile" },
       config = function() require "user.config.nvimscroll" end,
     },
+    -- ini untuk overide icons
+    ["nvim-tree/nvim-web-devicons"] = {
+      config = function() require "user.config.webdevicons" end,
+    },
+    ["iamcco/markdown-preview.nvim"] = {
+      config = function() require "user.config.markdown-config" end,
+    },
+    ["williamboman/nvim-lsp-installer"] = {},
     -- untuk auto comp commond mode
     ["gelguy/wilder.nvim"] = {
       config = function()
@@ -129,6 +115,7 @@ local m = {
         require("mini.indentscope").setup(opts)
       end,
     },
+    ["mfussenegger/nvim-jdtls"] = { module = "jdtls" }, -- load jdtls on module
   },
   ["cmp"] = function() require "user.config.cmp" end,
   -- ["nvim-web-devicons"] = function() require "user.config.webdevicons" end,
