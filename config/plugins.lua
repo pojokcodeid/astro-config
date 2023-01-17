@@ -56,7 +56,9 @@ local m = {
       config = function() require "user.config.webdevicons" end,
     },
     ["iamcco/markdown-preview.nvim"] = {
-      config = function() require "user.config.markdown-config" end,
+      run = "cd app && npm install",
+      setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+      ft = { "markdown" },
     },
     ["williamboman/nvim-lsp-installer"] = {},
     -- untuk auto comp commond mode
