@@ -18,7 +18,7 @@
 
 - Pastikan Akun Sudah Administrator
 
-```
+```bash
 visudo
 [nama user] ALL=(ALL:ALL) ALL
 [nama user] ALL=(ALL) NOPASSWD:ALL
@@ -26,7 +26,7 @@ visudo
 
 - Lakukan install Neovim dari link No 1 diatas
 
-```
+```bash
 sudo apt-get install wget
 mkdir download
 cd download
@@ -37,20 +37,20 @@ nvim --version
 
 - Check ketersediaan GCC
 
-```
+```bash
 gcc --version
 ```
 
 - Install git
 
-```
+```bash
 sudo apt-get install git
 git --version
 ```
 
 - Install NodeJS
 
-```
+```bash
 sudo apt-get install curl
 sudo apt install build-essential libssl-dev
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -65,14 +65,14 @@ nvm uninstall v18.13.0
 
 - Install unzip, ripgrep
 
-```
+```bash
 sudo apt-get install unzip
 sudo apt-get install ripgrep
 ```
 
 - Install Lazygit
 
-```
+```bash
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
@@ -81,7 +81,7 @@ lazygit --version
 
 - Copy Config
 
-```
+```bash
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 nvim +PackerSync
 git clone https://github.com/pojokcodeid/astro-config ~/.config/nvim/lua/user
@@ -185,7 +185,7 @@ git clone https://github.com/pojokcodeid/astro-config "$env:LOCALAPPDATA\nvim\lu
 - Cari File nvim/lua/user/config/alpha_config.lua <br>
   -- Ubah Bagian Code Berikut
 
-```
+```lua
  val = {
       [[             _       _                    _      ]],
       [[            (_)     | |                  | |     ]],
