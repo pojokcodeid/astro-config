@@ -1,6 +1,7 @@
 local m = {
   --skip_setup = { "clangd", "jdtls" },
-  skip_setup = { "jdtls" },
+  --skip_setup = { "jdtls", "rust_analyzer" },
+  --skip_setup = { "rust_analyzer" },
   -- enable servers that you already have installed without mason
   servers = {
     -- "pyright"
