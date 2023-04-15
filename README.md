@@ -2,6 +2,9 @@
 
 ![home!](img/home.png)
 
+## Config Terbaru Untuk AstroNvim v3.10 <br>
+https://github.com/pojokcodeid/astro-config-v2
+
 ## Kebutuhan dasar
 
 1. Install Neovim 8.0+ https://github.com/neovim/neovim/releases/tag/v0.8.2
